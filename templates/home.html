@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+
+{% block title %}
+    Home Page
+{% endblock title %}
+
+{% block content %}
+    <h2 class="font-weight-bold text-center mt-4">The way it works</h2>
+    <p class="lead mt-3">Requests Trap: A tool for capture and display HTTP requests. <br>
+        This simple tool is useful during the development of apps that integrate with external services, such as http
+        clients, webhooks, etc.
+        The Requests Trap app provides these services with an endpoint to which they can send requests and
+        notifications. </p>
+    <hr>
+    <p class="lead mt-3">
+        The app has three routes: <br>
+        - <b>/</b> (home page with instructions) <br>
+        - <b>/:request_id</b>, ex./test (sent requests will be captured here) <br>
+        - <b>/:request_id/requests</b>, ex./test/requests (requests will be displayed here)</p>
+    <hr>
+    <p class="lead mt-3">
+        In /:request_id/requests you will see the request_id in the header, and a list of the received
+        requests, ordered by creation date DESC
+    </p>
+{% endblock content %}

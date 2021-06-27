@@ -1,0 +1,37 @@
+{% extends '_base.html' %}
+
+{% block title %}
+    Request details
+{% endblock title %}
+
+{% block content %}
+    <h1>Captured requests for <b>{{ request_id }}</b></h1>
+    {% for request in requests %}
+        Request id:
+        {{ request.request_id }}
+        <br>
+        Date:
+        {{ request.date }} <br>
+        Remote IP:
+        {{ request.remote_ip }} <br>
+        Method:
+        {{ request.method }} <br>
+        Scheme:
+        {{ request.scheme }} <br>
+        Query string:
+        {{ request.query_string }} <br>
+        Query params:
+        {{ request.query_params }} <br>
+        Cookies:
+        <pre>
+        {{ request.cookies }}
+        </pre>
+        Headers:
+        <pre>
+        {{ request.headers }}
+        </pre>
+        Body:
+        {{ request.body }}
+        <hr>
+    {% endfor %}
+{% endblock content %}
