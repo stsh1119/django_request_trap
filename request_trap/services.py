@@ -20,6 +20,6 @@ def save_request_data(request: WSGIRequest, request_id: str) -> None:
     request.save()
 
 
-def find_requests_by_id(request_id: str) -> Iterable:
+def find_requests_by_id(request_id: str) -> list:
     """Finds all requests by given request_id and returns them sorted by creation date."""
     return Request.objects.filter(request_id=request_id).order_by('-date').all()
