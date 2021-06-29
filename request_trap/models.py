@@ -1,4 +1,5 @@
 from djongo import models
+from django.urls import reverse
 
 
 class Request(models.Model):
@@ -13,6 +14,9 @@ class Request(models.Model):
     cookies = models.TextField()
     headers = models.TextField()
     body = models.TextField()
+
+    def get_absolute_url(self):
+        return reverse('display_requests', args=[str(self.request_id)])
 
     def __repr__(self):
         return self.request_id
