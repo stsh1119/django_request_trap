@@ -1,7 +1,6 @@
 from django.utils import timezone
 from .models import Request
 from django.core.handlers.wsgi import WSGIRequest
-from typing import Iterable
 
 
 def save_request_data(request: WSGIRequest, request_id: str) -> None:
